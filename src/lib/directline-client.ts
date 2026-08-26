@@ -86,7 +86,7 @@ export class DirectLineSession {
 
         if (a.type === "typing" && !statusShown) {
           statusShown = true;
-          opts.onStatus?.("O PMO Guardiam começou a processar o documento...");
+          opts.onStatus?.("O PMO Guardian começou a processar o documento...");
           continue;
         }
 
@@ -118,7 +118,7 @@ export class DirectLineSession {
       if (!lastMessageAt && Date.now() - startedAt > firstResponseTimeoutMs) {
         throw new AgentTimeoutError(
           "O Copilot recebeu o documento, mas não retornou resposta inicial. " +
-            "Verifique se o agente PMO Guardiam está publicado, ativo no canal Direct Line e sem bloqueio de autenticação.",
+            "Verifique se o agente PMO Guardian está publicado, ativo no canal Direct Line e sem bloqueio de autenticação.",
         );
       }
 
@@ -126,7 +126,7 @@ export class DirectLineSession {
     }
 
     if (chunks.length > 0) return chunks.join("\n\n");
-    throw new AgentTimeoutError("O PMO Guardiam não respondeu no tempo esperado.");
+    throw new AgentTimeoutError("O PMO Guardian não respondeu no tempo esperado.");
   }
 }
 

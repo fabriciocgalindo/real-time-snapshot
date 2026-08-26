@@ -12,9 +12,9 @@ import {
 
 import { Button } from "@/components/ui/button";
 
-const TITLE = "PMO Guardiam — análise de TAP e ERU";
+const TITLE = "PMO Guardian — análise de TAP e ERU";
 const DESCRIPTION =
-  "Envie o Termo de Abertura de Projeto (TAP) e a Especificação de Requisitos de Usuário (ERU) e receba o diagnóstico do agente PMO Guardiam antes de seguir para o comitê.";
+  "Envie o Termo de Abertura de Projeto (TAP) e a Especificação de Requisitos de Usuário (ERU) e receba o diagnóstico do agente PMO Guardian antes de seguir para o comitê.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -43,7 +43,7 @@ const FEATURES = [
   },
   {
     icon: FileSearch,
-    title: "Diagnóstico do PMO Guardiam",
+    title: "Diagnóstico do PMO Guardian",
     text: "O agente aponta o que falta, por que importa e a quem perguntar. Ele orienta, nunca redige por você.",
   },
   {
@@ -82,7 +82,7 @@ const STEPS = [
     text: "Suba o TAP e/ou a ERU (PDF, DOCX, XLSX) ou cole o texto diretamente.",
   },
   {
-    title: "O PMO Guardiam analisa",
+    title: "O PMO Guardian analisa",
     text: "O agente lê apenas o que foi anexado e identifica lacunas, inconsistências e riscos.",
   },
   {
@@ -101,7 +101,7 @@ function LandingPage() {
               <Sparkles className="size-4" />
             </span>
             <span className="font-display text-base font-extrabold tracking-tight">
-              PMO Guardiam
+              PMO Guardian
             </span>
           </Link>
           <nav className="flex items-center gap-2">
@@ -132,7 +132,7 @@ function LandingPage() {
           />
           <div className="relative mx-auto max-w-3xl px-5 py-20 text-center sm:py-28">
             <span className="inline-flex items-center gap-2 rounded-full bg-brand-soft px-4 py-1.5 text-xs font-semibold text-brand">
-              <Sparkles className="size-3.5" /> Agente PMO Guardiam
+              <Sparkles className="size-3.5" /> Agente PMO Guardian
             </span>
             <h1 className="mt-6 font-display text-4xl font-extrabold tracking-tight sm:text-6xl">
               TAP e ERU revisados antes de virarem problema
@@ -243,8 +243,8 @@ function LandingPage() {
 
       <footer className="border-t border-border/60 py-8">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-5 text-xs text-muted-foreground sm:flex-row">
-          <span>PMO Guardiam — análise de TAP e ERU.</span>
-          <span>PMO Guardiam orienta, nunca redige.</span>
+          <span>PMO Guardian — análise de TAP e ERU.</span>
+          <span>PMO Guardian orienta, nunca redige.</span>
         </div>
       </footer>
     </div>
