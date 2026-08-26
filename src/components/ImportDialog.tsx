@@ -46,7 +46,7 @@ export function ImportDialog({ open, onOpenChange, onAnalyze, busy }: Props) {
         <DialogHeader>
           <DialogTitle className="text-2xl">Importar TAP e/ou ERU</DialogTitle>
           <DialogDescription>
-            Envie os documentos ou cole o conteúdo. O PMO Guardiam analisa e preenche o canvas.
+            Envie os documentos ou cole o conteúdo. O PMO Guardian analisa e preenche o canvas.
           </DialogDescription>
         </DialogHeader>
 

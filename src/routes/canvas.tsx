@@ -26,17 +26,17 @@ const WEBCHAT_URL =
 export const Route = createFileRoute("/canvas")({
   head: () => ({
     meta: [
-      { title: "PMO Guardiam | Termo de Abertura de Projeto" },
+      { title: "PMO Guardian | Termo de Abertura de Projeto" },
       {
         name: "description",
         content:
-          "Analise o TAP e a ERU com o agente PMO Guardiam: diagnóstico com evidências e o Termo de Abertura estruturado em oito quadrantes.",
+          "Analise o TAP e a ERU com o agente PMO Guardian: diagnóstico com evidências e o Termo de Abertura estruturado em oito quadrantes.",
       },
-      { property: "og:title", content: "PMO Guardiam | Termo de Abertura de Projeto" },
+      { property: "og:title", content: "PMO Guardian | Termo de Abertura de Projeto" },
       {
         property: "og:description",
         content:
-          "Importe briefings e documentos e tenha o TAP estruturado em oito quadrantes pelo PMO Guardiam.",
+          "Importe briefings e documentos e tenha o TAP estruturado em oito quadrantes pelo PMO Guardian.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -70,7 +70,7 @@ function TapCanvasPage() {
         setAnalysisStatus(
           attempt === 1
             ? "Iniciando conversa com o agente..."
-            : `Tentativa ${attempt} de ${MAX_ATTEMPTS} — reenviando ao PMO Guardiam...`,
+            : `Tentativa ${attempt} de ${MAX_ATTEMPTS} — reenviando ao PMO Guardian...`,
         );
 
         const session = await DirectLineSession.start(token);
@@ -87,12 +87,12 @@ function TapCanvasPage() {
         try {
           const answer = await session.waitForAnalysis({
             onStatus: (s) => setAnalysisStatus(s),
-            onPartial: () => setAnalysisStatus("Recebendo análise do PMO Guardiam..."),
+            onPartial: () => setAnalysisStatus("Recebendo análise do PMO Guardian..."),
           });
           setReport(answer);
           setFilled(parseCanvasSections(answer));
           setImportOpen(false);
-          toast.success("Canvas preenchido pelo PMO Guardiam.");
+          toast.success("Canvas preenchido pelo PMO Guardian.");
           return;
         } catch (err) {
           lastError = err;
@@ -132,13 +132,13 @@ function TapCanvasPage() {
             to="/"
             className="font-display text-xs font-semibold tracking-[0.18em] text-brand uppercase transition-opacity hover:opacity-70"
           >
-            ← PMO Guardiam
+            ← PMO Guardian
           </Link>
           <h1 className="text-gradient-brand mt-2 text-4xl font-extrabold md:text-5xl">
-            PMO Guardiam
+            PMO Guardian
           </h1>
           <p className="mt-2 max-w-xl text-base text-muted-foreground">
-            Envie o TAP e/ou a ERU e receba o diagnóstico do PMO Guardiam, com o
+            Envie o TAP e/ou a ERU e receba o diagnóstico do PMO Guardian, com o
             Termo de Abertura estruturado em oito quadrantes.
           </p>
         </div>
@@ -165,7 +165,7 @@ function TapCanvasPage() {
             🖼️ Visão Canvas
           </TabsTrigger>
           <TabsTrigger value="resultados" className="font-display">
-            📊 Análise PMO Guardiam
+            📊 Análise PMO Guardian
           </TabsTrigger>
           <TabsTrigger value="chat" className="font-display">
             💬 Conversar com o agente
@@ -193,7 +193,7 @@ function TapCanvasPage() {
                     <div className="flex flex-1 flex-col items-center justify-center gap-2 rounded-2xl border border-border bg-brand-soft text-sm text-brand">
                       <Loader2 className="size-5 animate-spin" />
                       <span className="px-3 text-center">
-                        {analysisStatus ?? "Aguardando PMO Guardiam..."}
+                        {analysisStatus ?? "Aguardando PMO Guardian..."}
                       </span>
                     </div>
                   ) : lines && lines.length > 0 ? (
@@ -229,7 +229,7 @@ function TapCanvasPage() {
             {busy ? (
               <div className="py-20 text-center">
                 <Loader2 className="mx-auto mb-5 size-14 animate-spin text-brand" />
-                <h2 className="text-2xl font-bold">O PMO Guardiam está analisando...</h2>
+                <h2 className="text-2xl font-bold">O PMO Guardian está analisando...</h2>
                 <p className="mt-2 text-muted-foreground">
                   {analysisStatus ??
                     "Isso pode levar até 2 minutos, dependendo do tamanho do documento."}
@@ -244,7 +244,7 @@ function TapCanvasPage() {
                 <div className="flex flex-wrap items-end justify-between gap-4 border-b border-border pb-5">
                   <div>
                     <h2 className="text-gradient-brand text-2xl font-bold">
-                      Relatório extraído pelo PMO Guardiam
+                      Relatório extraído pelo PMO Guardian
                     </h2>
                     <p className="mt-1 text-sm text-muted-foreground">
                       Diagnóstico de TAP e ERU organizado por seção.
@@ -288,14 +288,14 @@ function TapCanvasPage() {
         <TabsContent value="chat" className="mt-6">
           <div className="shadow-card overflow-hidden rounded-3xl border border-border bg-card/80 backdrop-blur-md">
             <div className="border-b border-border px-6 py-4">
-              <h2 className="font-display text-lg font-bold">PMO Guardiam</h2>
+              <h2 className="font-display text-lg font-bold">PMO Guardian</h2>
               <p className="text-sm text-muted-foreground">
                 Converse diretamente com o agente para analisar o TAP e a ERU.
               </p>
             </div>
             <iframe
               src={WEBCHAT_URL}
-              title="Chat do PMO Guardiam"
+              title="Chat do PMO Guardian"
               className="h-[70vh] w-full border-0 bg-white"
             />
           </div>
